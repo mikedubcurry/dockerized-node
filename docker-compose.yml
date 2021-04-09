@@ -10,9 +10,9 @@ services:
     ports: 
       - '5432:5432'
     volumes:
-      - api-db:/var/lib/postgresql/data
+      - app-db:/var/lib/postgresql/data
 
-  nodeapp:
+  app:
     build:
       context: .
     environment:
@@ -26,4 +26,4 @@ services:
       - '3000:3000'
         
 volumes:
-  api-db:
+  app-db:

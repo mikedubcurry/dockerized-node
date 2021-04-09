@@ -7,7 +7,7 @@ const router = express.Router();
 router.get('/all', (req, res) => {
 	Person.findAll()
 		.then((persons) => {
-			res.status(200).send(JSON.stringify(persons));
+			res.status(200).json({ persons });
 		})
 		.catch((err) => {
 			res.status(500).send(JSON.stringify(err));
@@ -34,7 +34,7 @@ router.put('/', function (req, res) {
 			res.status(200).send(JSON.stringify(person));
 		})
 		.catch((err) => {
-			res.status(500).send(JSON.stringify(err));
+			res.status(500).send(JSON.stringify(req));
 		});
 });
 
